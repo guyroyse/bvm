@@ -36,7 +36,3 @@ def parse_package(full_name)
   temp = /^.*\./.match full_name
   return /^.*[^\.]/.match(temp.to_s)
 end
-
-input = STDIN.read
-output = convert input, 'jar', 'ncloc', 'coverage'
-puts output 
