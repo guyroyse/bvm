@@ -1,0 +1,26 @@
+<resources>
+  <resource>
+    <key>package.Class</key>
+    <name>Class</name>
+    <msr>
+      <key>ncloc</key>
+      <val>100</val>
+    </msr>
+    <msr>
+      <key>coverage</key>
+      <val>0.8</val>
+    </msr>
+  </resource>
+  <resource>
+    <key>other.package.OtherClass</key>
+    <name>OtherClass</name>
+    <msr>
+      <key>ncloc</key>
+      <val>200</val>
+    </msr>
+    <msr>
+      <key>coverage</key>
+      <val>0.6</val>
+    </msr>
+  </resource>
+</resources>
