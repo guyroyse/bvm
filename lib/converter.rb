@@ -1,7 +1,7 @@
 require 'xmlsimple'
 
 def convert(input, jar, size, color, adjust = 0)
-  output = "";
+  output = ""
   metrics = parse_xml input
   metrics[:resource].each do |resource|
     output << build_output(resource, jar, size, color, adjust)
@@ -23,7 +23,7 @@ def build_output(resource, jar, size, color, adjust)
 end
 
 def find_metric(metrics, key)
-  found_metric = nil;
+  found_metric = nil
   metrics.each do |metric|
     if key == metric[:key][0] then
       found_metric = metric[:val][0].to_f
@@ -34,5 +34,5 @@ end
 
 def parse_package(full_name)
   temp = /^.*\./.match full_name
-  return /^.*[^\.]/.match(temp.to_s)
+  /^.*[^\.]/.match(temp.to_s)
 end

@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'src/converter'
+require 'converter'
 require 'optparse'
 
 options = { :jar => 'jar', :size => 'ncloc', :color => 'coverage', :adjust => 0 } 
