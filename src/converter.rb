@@ -2,16 +2,24 @@ require 'xmlsimple'
 
 def convert(input, jar, size, color, adjust = 0)
   output = "";
-  metrics = XmlSimple.xml_in input, { 'GroupTags' => { 'resources' => 'resource' }, 'KeyToSymbol' => true }
+  metrics = parse_xml input
   metrics[:resource].each do |resource|
-    name = resource[:name]
-    size_metric = find_metric resource[:msr], size
-    color_metric = find_metric resource[:msr], color
-    color_metric += adjust
-    package = parse_package resource[:key][0]  
-    output << %Q/#{size_metric},#{color_metric},"#{jar}","#{package}","#{name}"\n/
+    output << build_output(resource, jar, size, color, adjust)
   end
   output
+end
+
+def parse_xml(input)
+  XmlSimple.xml_in input, { 'GroupTags' => { 'resources' => 'resource' }, 'KeyToSymbol' => true }
+end
+
+def build_output(resource, jar, size, color, adjust)
+  name = resource[:name]
+  size_metric = find_metric resource[:msr], size
+  color_metric = find_metric resource[:msr], color
+  color_metric += adjust
+  package = parse_package resource[:key][0]  
+  %Q/#{size_metric},#{color_metric},"#{jar}","#{package}","#{name}"\n/  
 end
 
 def find_metric(metrics, key)
