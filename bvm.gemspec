@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
 	s.email = ['guy@guyroyse.com']
 	s.homepage = "http://github.com/guyroyse/big-visible-metrics"
 	s.license = "MIT"
-	s.summary = "Generates CSV files from SONAR metrics that can be fed into Microsfot Tree Mapper and used to generate BVCs"
-	s.description = ""
+	s.summary = "Generates CSV files from SONAR metrics"
+	s.description = "Generates CSV files that can be consumed by Microsoft Treemapper from the Sonar API.  Reads stin and stdout."
 	
 	s.required_rubygems_version = ">=1.3.6"
 	

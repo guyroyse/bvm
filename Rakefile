@@ -9,6 +9,14 @@ end
 
 task :default => :spec
 
-task :gemspec do
-  gemspec.validate
+task :build do
+  sh "gem build bvm.gemspec"
+end
+
+task :install do
+  sh "sudo gem install bvm-0.3.0.gem"
+end
+
+task :uninstall do
+  sh "sudo gem uninstall bvm"
 end
