@@ -1,7 +1,6 @@
 = bvm
 
-Reads STDIN and writes to STDOUT.  Combine with curl or other tools to retrieve Sonar metrics.
-ruby bvm.rb --help
+Description goes here.
 
 == Contributing to bvm
  
@@ -15,6 +14,6 @@ ruby bvm.rb --help
 
 == Copyright
 
-Copyright (c) 2011 Guy Royse, Alyssa Diaz. See LICENSE.txt for
+Copyright (c) 2011 Guy Royse. See LICENSE.txt for
 further details.
 

@@ -36,3 +36,4 @@ def parse_package(full_name)
   temp = /^.*\./.match full_name
   /^.*[^\.]/.match(temp.to_s)
 end
+

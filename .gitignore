@@ -1,5 +1,3 @@
 .idea
-.bundle
-.DS_Store
-*.lock
 .project
+*.gem

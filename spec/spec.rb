@@ -1,4 +1,4 @@
-require 'src/converter'
+require 'bvm/converter'
 
 describe "Big Visible Metrics" do
 
