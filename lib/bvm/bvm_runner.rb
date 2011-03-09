@@ -19,7 +19,7 @@ OptionParser.new do |opts|
     converter.color_adjustment = adjust.to_f
   end
   opts.on("--invert-color", "Inverts the color metric making it negative if positive and vice versa, executes before --color-adjust, defaults to false") do
-    invert_color_metric = true
+    converter.invert_color_metric = true
   end
 end.parse!
 
