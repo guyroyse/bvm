@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
 	s.name = "bvm"
-	s.version = '0.3.0'
+	s.version = '0.3.1'
 	s.platform = Gem::Platform::RUBY
 	s.authors = ['Guy Royse', 'Alyssa Diaz']
 	s.email = ['guy@guyroyse.com']
