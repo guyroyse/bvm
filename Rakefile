@@ -14,13 +14,13 @@ task :build do
 end
 
 task :install do
-  sh "sudo gem install bvm-0.3.1.gem"
+  sh "gem install bvm-0.3.2.gem"
 end
 
 task :uninstall do
-  sh "sudo gem uninstall bvm"
+  sh "gem uninstall bvm"
 end
 
 task :push do
-  sh "gem push bvm-0.3.1.gem"
+  sh "gem push bvm-0.3.2.gem"
 end
