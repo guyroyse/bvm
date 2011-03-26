@@ -29,7 +29,7 @@ class Converter
   end
   
   def build_output(resource, jar, size, color, adjust)
-    name = resource[:name]
+    name = resource[:name][0]
     size_metric = find_metric resource[:msr], size
     color_metric = find_metric resource[:msr], color
     color_metric *= -1 unless not @invert_color_metric
