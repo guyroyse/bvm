@@ -18,8 +18,10 @@ class Converter
   def convert(input)
     output = ""
     metrics = parse_xml input
-    metrics[:resource].each do |resource|
-      output << build_output(resource, @jar, @size_metric, @color_metric, @color_adjustment)
+    unless metrics[:resource].nil?
+      metrics[:resource].each do |resource|
+        output << build_output(resource, @jar, @size_metric, @color_metric, @color_adjustment)
+      end
     end
     output
   end
@@ -29,13 +31,19 @@ class Converter
   end
   
   def build_output(resource, jar, size, color, adjust)
-    name = resource[:name][0]
-    size_metric = find_metric resource[:msr], size
-    color_metric = find_metric resource[:msr], color
-    color_metric *= -1 unless not @invert_color_metric
-    color_metric += adjust
     package = parse_package resource[:key][0]  
-    %Q/#{size_metric},#{color_metric},"#{jar}","#{package}","#{name}"\n/  
+    name = resource[:name][0]
+
+    unless resource[:msr].nil?
+      size_metric = find_metric resource[:msr], size
+      color_metric = find_metric resource[:msr], color
+      color_metric *= -1 unless not @invert_color_metric
+      color_metric += adjust
+      %Q/#{size_metric},#{color_metric},"#{jar}","#{package}","#{name}"\n/  
+    else
+      %Q/1,#{adjust},"NotFound","#{package}","#{name}"\n/  
+    end
+
   end
   
   def find_metric(metrics, key)

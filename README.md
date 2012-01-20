@@ -32,15 +32,15 @@ The CSV content that BVM generates consists of the following format:
 
 The size metric is self-explanitory.  It's the size of the box to be generated.  By default is it set to ncloc and this is probably what you will always want.  I can be changed using the --size switch and specifing a different Sonar metric.
 
-The color metric defaults to coverage.  You will probably want this to be several differnt values, depending on the charts you want to generate.  It can be sepcified using the --color switch.
+The color metric defaults to coverage.  You will probably want this to be several different values, depending on the charts you want to generate.  It can be specified using the --color switch.
 
-Microsoft Treemapper expects that negative numbers are red and positive numbers are green but our metrics aren't quite so compliant.  The --invert-color swtich will mulitply the specified color metric by -1 to accomodate the charts you are trying to create.  Furthermore, the --color-adjust switch can be given a number that will be added to the specified metric before being outputed.  This allows us to set threshholds of tolerance for our charts.
+Microsoft Treemapper expects that negative numbers are red and positive numbers are green but our metrics aren't quite so compliant.  The --invert-color switch will multiply the specified color metric by -1 to accomodate the charts you are trying to create.  Furthermore, the --color-adjust switch can be given a number that will be added to the specified metric before being outputed.  This allows us to set threshholds of tolerance for our charts.
 
-The JAR name is really just the project name.  If you have multiple JARs in your project (and who doesn't) then the --jar switch will allow you to group them all into one file and generate one enourmous view of your entire codebase.  It defaults to "jar" and you probably always want to override it.
+The JAR name is really just the project name.  If you have multiple JARs in your project (and who doesn't) then the --jar switch will allow you to group them all into one file and generate one enormous view of your entire codebase.  It defaults to "jar" and you probably always want to override it.
 
-If your command line savy you probably noticed that BVM does not actually operate on files.  It reads STDIN and writes STDOUT.
+If you are command line savvy you probably noticed that BVM does not actually operate on files.  It reads STDIN and writes STDOUT.
 
 Copyright
 ---------
 
-Copyright (c) 2011 Guy Royse & Alyssa Diaz. See LICENSE for further details.
+Copyright (c) 2012 Guy Royse & Alyssa Diaz & Jacob Dingus. See LICENSE for further details.

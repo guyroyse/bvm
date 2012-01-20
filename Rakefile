@@ -14,7 +14,7 @@ task :build do
 end
 
 task :install do
-  sh "gem install bvm-0.3.2.gem"
+  sh "gem install bvm-0.3.3.gem"
 end
 
 task :uninstall do
@@ -22,5 +22,5 @@ task :uninstall do
 end
 
 task :push do
-  sh "gem push bvm-0.3.2.gem"
+  sh "gem push bvm-0.3.3.gem"
 end
