@@ -41,7 +41,7 @@ class Converter
       color_metric += adjust
       %Q/#{size_metric},#{color_metric},"#{jar}","#{package}","#{name}"\n/  
     else
-      %Q/1,#{adjust},"NotFound","#{package}","#{name}"\n/  
+      %Q/1.0,#{adjust},"NotFound","#{package}","#{name}"\n/  
     end
 
   end
