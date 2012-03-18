@@ -15,11 +15,11 @@ Once it is installed, you may also want to install Microsoft Treemapper.  Downlo
 Typical Usage
 -------------
 
-This sample generates a CSV file ready for Microsoft Treemapper to use against the Apache's Maven source.  The size of the box represents the numbers of lines of code (the ncloc metric) in the class and the color reflects the cyclomatic complextiy.  In this case, a complexity of 50 is the threshhold between red and green on the chart. 
+This sample generates a CSV file ready for Microsoft Treemapper to use against the Apache's Maven source.  The size of the box represents the numbers of lines of code (the ncloc metric) in the class and the color reflects the cyclomatic complexity.  In this case, a complexity of 50 is the threshold between red and green on the chart. 
 
     curl -X GET "http://nemo.sonarsource.org/api/resources?resource=99176&metrics=ncloc,complexity&depth=-1&qualifiers=CLA&format=xml" | bvm --jar maven --color complexity --invert-color --color-adjust 50 > maven-complexity.csv
 
-This generates a similar data set for code coverage.  In this case, the coverage threshhold is set to 80%.
+This generates a similar data set for code coverage.  In this case, the coverage threshold is set to 80%.
 
     curl -X GET "http://nemo.sonarsource.org/api/resources?resource=99176&metrics=ncloc,coverage&depth=-1&qualifiers=CLA&format=xml" | bvm --jar maven --color coverage --color-adjust 80 > maven-coverage.csv
 
@@ -30,11 +30,11 @@ The CSV content that BVM generates consists of the following format:
 
     <size_metric>,<color_metric>,<jar_name>,<package_name>,<class_name>
 
-The size metric is self-explanitory.  It's the size of the box to be generated.  By default is it set to ncloc and this is probably what you will always want.  I can be changed using the --size switch and specifing a different Sonar metric.
+The size metric is self-explanatory.  It's the size of the box to be generated.  By default is it set to ncloc and this is probably what you will always want.  It can be changed using the --size switch and specifying a different Sonar metric.
 
 The color metric defaults to coverage.  You will probably want this to be several different values, depending on the charts you want to generate.  It can be specified using the --color switch.
 
-Microsoft Treemapper expects that negative numbers are red and positive numbers are green but our metrics aren't quite so compliant.  The --invert-color switch will multiply the specified color metric by -1 to accomodate the charts you are trying to create.  Furthermore, the --color-adjust switch can be given a number that will be added to the specified metric before being outputed.  This allows us to set threshholds of tolerance for our charts.
+Microsoft Treemapper expects that negative numbers are red and positive numbers are green but our metrics aren't quite so compliant.  The --invert-color switch will multiply the specified color metric by -1 to accomodate the charts you are trying to create.  Furthermore, the --color-adjust switch can be given a number that will be added to the specified metric before being outputed.  This allows us to set thresholds of tolerance for our charts.
 
 The JAR name is really just the project name.  If you have multiple JARs in your project (and who doesn't) then the --jar switch will allow you to group them all into one file and generate one enormous view of your entire codebase.  It defaults to "jar" and you probably always want to override it.
 
